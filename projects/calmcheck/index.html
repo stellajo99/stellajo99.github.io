@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>CalmCheck: A Fast, Smart Health Companion | Stella Jo</title>
+<meta name="keywords" content="">
+<meta name="description" content="CalmCheck is a lightweight, responsive mobile health companion that delivers personalized AI guidance for everyday symptoms with real-time trusted health news and smart local data handling.">
+<meta name="author" content="">
+<link rel="canonical" href="https://stellajo99.github.io/projects/calmcheck/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://stellajo99.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://stellajo99.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://stellajo99.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://stellajo99.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://stellajo99.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://stellajo99.github.io/projects/calmcheck/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://stellajo99.github.io/projects/calmcheck/">
+  <meta property="og:site_name" content="Stella Jo">
+  <meta property="og:title" content="CalmCheck: A Fast, Smart Health Companion">
+  <meta property="og:description" content="CalmCheck is a lightweight, responsive mobile health companion that delivers personalized AI guidance for everyday symptoms with real-time trusted health news and smart local data handling.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2025-05-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-27T00:00:00+00:00">
+    <meta property="og:image" content="https://stellajo99.github.io/images/CalmCheck/calmcheck_cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://stellajo99.github.io/images/CalmCheck/calmcheck_cover.png">
+<meta name="twitter:title" content="CalmCheck: A Fast, Smart Health Companion">
+<meta name="twitter:description" content="CalmCheck is a lightweight, responsive mobile health companion that delivers personalized AI guidance for everyday symptoms with real-time trusted health news and smart local data handling.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "https://stellajo99.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "CalmCheck: A Fast, Smart Health Companion",
+      "item": "https://stellajo99.github.io/projects/calmcheck/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CalmCheck: A Fast, Smart Health Companion",
+  "name": "CalmCheck: A Fast, Smart Health Companion",
+  "description": "CalmCheck is a lightweight, responsive mobile health companion that delivers personalized AI guidance for everyday symptoms with real-time trusted health news and smart local data handling.",
+  "keywords": [
+    
+  ],
+  "articleBody": "📌 Overview My Project CalmCheck is a high-performance mobile app designed to reduce health-related anxiety through rapid natural language AI conversations and real-time health information. CalmCheck provides quick, relevant responses by integrating a streamlined Flask backend, a fast LLaMA 4 model via OpenRouter, and local SQLite storage for instant personalization.\n🚀 Key Performance Highlights ⚡ Instant AI Responses: Prompt generation and OpenRouter API calls deliver relevant suggestions with minimal latency. 🧠 Smart Context Handling: Uses NLP keyword tracking and recent chat history for adaptive, user-specific advice. 🔒 Fast Local Storage: Lightweight SQLite operations ensure seamless read/write of user data without cloud delay. 📰 Real-Time News Feed: GNews API integration fetches up-to-date, trusted health articles efficiently. 🛠️ Tech Stack Backend: Python (Flask), OpenRouter API (LLaMA 4), GNews API, SQLite, spaCy Frontend: Java (Android Studio), local SQLite caching for rapid data access 💿 Database Schema \u0026 ER Diagram Local SQLite keeps the app lightweight while handling multiple users’ chat logs in calmcheck.db:\nchat_history(user_id, input, response, summary, severity, timestamp)\n📸 App Demonstration 📘 What I Learned Engineered a robust, low-latency conversational AI for sensitive health contexts Learned practical integration of LLaMA 4 via OpenRouter API, optimizing prompt design and API calls for speed and relevance Designed context-aware personalization pipelines using LLMs, leveraging user history and NLP to generate more meaningful responses Gained deep understanding of prompt engineering to control AI tone and output responsibly Optimized backend and local DB for fast data processing under mobile constraints Integrated real-time external data sources without degrading app speed Improved personalization algorithms to deliver more relevant, user-specific advice Balanced performance, privacy, and usability for a stress-reducing health companion 🔗 Links Source Code (GitHub) Demo Video Presentation Video ",
+  "wordCount" : "280",
+  "inLanguage": "en",
+  "image":"https://stellajo99.github.io/images/CalmCheck/calmcheck_cover.png","datePublished": "2025-05-27T00:00:00Z",
+  "dateModified": "2025-05-27T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://stellajo99.github.io/projects/calmcheck/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Stella Jo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stellajo99.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://stellajo99.github.io/" accesskey="h" title="Stella Jo (Alt + H)">Stella Jo</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://stellajo99.github.io/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://stellajo99.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://stellajo99.github.io/cv/" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      CalmCheck: A Fast, Smart Health Companion
+    </h1>
+    <div class="post-meta"><span title='2025-05-27 00:00:00 +0000 UTC'>May 27, 2025</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="https://stellajo99.github.io/images/CalmCheck/calmcheck_cover.png" alt="CalmCheck App Screenshot">
+        
+</figure>
+  <div class="post-content"><h2 id="-overview">📌 Overview<a hidden class="anchor" aria-hidden="true" href="#-overview">#</a></h2>
+<p>My Project CalmCheck is a high-performance mobile app designed to reduce health-related anxiety through rapid natural language AI conversations and real-time health information. CalmCheck provides quick, relevant responses by integrating a streamlined <strong>Flask backend</strong>, a fast <strong>LLaMA 4</strong> model via OpenRouter, and local <strong>SQLite</strong> storage for instant personalization.</p>
+<hr>
+<h2 id="-key-performance-highlights">🚀 Key Performance Highlights<a hidden class="anchor" aria-hidden="true" href="#-key-performance-highlights">#</a></h2>
+<ul>
+<li>⚡ <strong>Instant AI Responses:</strong> Prompt generation and OpenRouter API calls deliver relevant suggestions with minimal latency.</li>
+<li>🧠 <strong>Smart Context Handling:</strong> Uses NLP keyword tracking and recent chat history for adaptive, user-specific advice.</li>
+<li>🔒 <strong>Fast Local Storage:</strong> Lightweight <strong>SQLite</strong> operations ensure seamless read/write of user data without cloud delay.</li>
+<li>📰 <strong>Real-Time News Feed:</strong> GNews API integration fetches up-to-date, trusted health articles efficiently.</li>
+</ul>
+<hr>
+<h2 id="-tech-stack">🛠️ Tech Stack<a hidden class="anchor" aria-hidden="true" href="#-tech-stack">#</a></h2>
+<ul>
+<li><strong>Backend:</strong> Python (<strong>Flask</strong>), <strong>OpenRouter API</strong> (LLaMA 4), <strong>GNews API</strong>, <strong>SQLite</strong>, <strong>spaCy</strong></li>
+<li><strong>Frontend:</strong> Java (<strong>Android Studio</strong>), local SQLite caching for rapid data access</li>
+</ul>
+<hr>
+<h2 id="-database-schema--er-diagram">💿 Database Schema &amp; ER Diagram<a hidden class="anchor" aria-hidden="true" href="#-database-schema--er-diagram">#</a></h2>
+<p>Local <strong>SQLite</strong> keeps the app lightweight while handling multiple users’ chat logs in <code>calmcheck.db</code>:<br>
+<code>chat_history(user_id, input, response, summary, severity, timestamp)</code></p>
+<hr>
+<h2 id="-app-demonstration">📸 App Demonstration<a hidden class="anchor" aria-hidden="true" href="#-app-demonstration">#</a></h2>
+<p><img alt="screenshot1" loading="lazy" src="/images/CalmCheck/cc1.png"><br>
+<img alt="screenshot2" loading="lazy" src="/images/CalmCheck/cc2.png"><br>
+<img alt="screenshot3" loading="lazy" src="/images/CalmCheck/cc3.png">
+<img alt="screenshot4" loading="lazy" src="/images/CalmCheck/cc4.png">
+<img alt="screenshot5" loading="lazy" src="/images/CalmCheck/cc5.png"></p>
+<hr>
+<h2 id="-what-i-learned">📘 What I Learned<a hidden class="anchor" aria-hidden="true" href="#-what-i-learned">#</a></h2>
+<ul>
+<li>Engineered a robust, low-latency conversational AI for sensitive health contexts</li>
+<li>Learned practical integration of LLaMA 4 via OpenRouter API, optimizing prompt design and API calls for speed and relevance</li>
+<li>Designed context-aware personalization pipelines using LLMs, leveraging user history and NLP to generate more meaningful responses</li>
+<li>Gained deep understanding of prompt engineering to control AI tone and output responsibly</li>
+<li>Optimized backend and local DB for fast data processing under mobile constraints</li>
+<li>Integrated real-time external data sources without degrading app speed</li>
+<li>Improved personalization algorithms to deliver more relevant, user-specific advice</li>
+<li>Balanced performance, privacy, and usability for a stress-reducing health companion</li>
+</ul>
+<hr>
+<h2 id="-links">🔗 Links<a hidden class="anchor" aria-hidden="true" href="#-links">#</a></h2>
+<ul>
+<li><a href="https://github.com/stellajo99/CalmCheck">Source Code (GitHub)</a></li>
+<li><a href="https://youtube.com/shorts/DEi2WWkYpMw?feature=share">Demo Video</a></li>
+<li><a href="https://youtu.be/vAcxfKEJ5uE">Presentation Video</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://stellajo99.github.io/">Stella Jo</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

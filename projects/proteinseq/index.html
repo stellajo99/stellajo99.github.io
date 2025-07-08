@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>A Comparative Study on Deep Learning Methods for Protein Sequence Classification | Stella Jo</title>
+<meta name="keywords" content="">
+<meta name="description" content="This research benchmarks RNN, LSTM, and Transformer models for classifying protein sequences using amino acid embeddings from UniProt.">
+<meta name="author" content="">
+<link rel="canonical" href="https://stellajo99.github.io/projects/proteinseq/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://stellajo99.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://stellajo99.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://stellajo99.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://stellajo99.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://stellajo99.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://stellajo99.github.io/projects/proteinseq/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://stellajo99.github.io/projects/proteinseq/">
+  <meta property="og:site_name" content="Stella Jo">
+  <meta property="og:title" content="A Comparative Study on Deep Learning Methods for Protein Sequence Classification">
+  <meta property="og:description" content="This research benchmarks RNN, LSTM, and Transformer models for classifying protein sequences using amino acid embeddings from UniProt.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2022-12-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-12-10T00:00:00+00:00">
+    <meta property="og:image" content="https://stellajo99.github.io/images/ProteinSeq/biocover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://stellajo99.github.io/images/ProteinSeq/biocover.png">
+<meta name="twitter:title" content="A Comparative Study on Deep Learning Methods for Protein Sequence Classification">
+<meta name="twitter:description" content="This research benchmarks RNN, LSTM, and Transformer models for classifying protein sequences using amino acid embeddings from UniProt.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "https://stellajo99.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "A Comparative Study on Deep Learning Methods for Protein Sequence Classification",
+      "item": "https://stellajo99.github.io/projects/proteinseq/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A Comparative Study on Deep Learning Methods for Protein Sequence Classification",
+  "name": "A Comparative Study on Deep Learning Methods for Protein Sequence Classification",
+  "description": "This research benchmarks RNN, LSTM, and Transformer models for classifying protein sequences using amino acid embeddings from UniProt.",
+  "keywords": [
+    
+  ],
+  "articleBody": "📌 Overview This study investigates how well different deep learning models can classify protein sequences based only on amino acid embeddings.\nProtein sequences are vital in bioinformatics, but their sheer volume demands automated, accurate classification to understand function and taxonomy efficiently.\nInspired by the sequential nature of amino acids (time-series-like), this project compares RNN, LSTM, and Transformer architectures to evaluate which is more effective for protein classification.\n🎯 Research Objectives Use only protein sequence embeddings to classify which species a given protein belongs to. Compare three deep learning methods: Recurrent Neural Network (RNN) Long Short-Term Memory (LSTM) Transformer (Attention-based) Evaluate each model’s classification accuracy and training stability. Identify which architecture is most suitable for order-sensitive protein sequence data. 📚 Methodology Dataset:\nSourced from UniProt ‘Protein Embeddings’ for three species: Caenorhabditis elegans, Homo sapiens, Mus musculus. Each embedding is a 1024-dimensional vector representing the amino acid sequence. Preprocessing:\n5,000 embedding vectors randomly sampled per species. Labeled for supervised learning. Split into train:validation:test sets (60% : 20% : 20%). Implemented in Google Colab GPU environment. Models:\nAll models share the same hyperparameters: hidden layers, optimizer, loss function, epochs, batch size. Early stopping applied if validation loss does not decrease for 10 epochs. 🧬 Deep Learning Architectures RNN: Basic sequential model for pattern recognition in time-series data. LSTM: Solves the vanishing gradient issue of RNNs, allowing learning of longer sequences. Transformer: Uses Attention mechanisms to process input in parallel rather than sequentially, theoretically faster but may underperform on biological sequences. 📊 Key Findings Training Stability:\nRNN and LSTM showed steadily decreasing loss and increasing accuracy during training. Transformer exhibited unstable learning curves for this task. Test Results:\nModel Test Loss Test Accuracy RNN 0.5653 68.9% LSTM 0.5513 68.7% Transformer 0.5953 64.2% Conclusion:\nRNN-based models outperformed Transformer for protein sequence classification, achieving ~69% test accuracy versus 64% for Transformer.\nLoss values remained stable (around 0.55–0.59), confirming the RNN and LSTM models’ reliability for this sequential task.\n💡 Insights \u0026 Discussion Contribution: Demonstrates that even simple RNN or LSTM architectures can effectively classify protein sequences based on amino acid embeddings. Limitation: Small dataset and shallow model depth limit generalizability. Future Work: Scaling up to larger protein databases and exploring hybrid models combining RNNs with Attention mechanisms could further boost accuracy. 📘 What I Learned End-to-end pipeline for protein sequence classification using deep learning. Hands-on practice with sequence embedding, data preprocessing, and multi-model comparison. Designed, trained, and tuned multiple AI architectures (RNN, LSTM, Transformer) for bioinformatics. Learned the practical trade-offs of model complexity vs. interpretability for biological data. Presented findings as a final thesis project and prepared code for reproducibility. 🔗 Links 📄 Full Thesis (PDF) 💻 Code Repository (GitHub) 🔬 UniProt Dataset ",
+  "wordCount" : "447",
+  "inLanguage": "en",
+  "image":"https://stellajo99.github.io/images/ProteinSeq/biocover.png","datePublished": "2022-12-10T00:00:00Z",
+  "dateModified": "2022-12-10T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://stellajo99.github.io/projects/proteinseq/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Stella Jo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stellajo99.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://stellajo99.github.io/" accesskey="h" title="Stella Jo (Alt + H)">Stella Jo</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://stellajo99.github.io/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://stellajo99.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://stellajo99.github.io/cv/" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      A Comparative Study on Deep Learning Methods for Protein Sequence Classification
+    </h1>
+    <div class="post-meta"><span title='2022-12-10 00:00:00 +0000 UTC'>December 10, 2022</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="https://stellajo99.github.io/images/ProteinSeq/biocover.png" alt="Protein Sequence Classification">
+        
+</figure>
+  <div class="post-content"><h2 id="-overview">📌 Overview<a hidden class="anchor" aria-hidden="true" href="#-overview">#</a></h2>
+<p>This study investigates how well different deep learning models can classify protein sequences based only on <strong>amino acid embeddings</strong>.<br>
+Protein sequences are vital in bioinformatics, but their sheer volume demands automated, accurate classification to understand function and taxonomy efficiently.</p>
+<p>Inspired by the sequential nature of amino acids (time-series-like), this project compares <strong>RNN</strong>, <strong>LSTM</strong>, and <strong>Transformer</strong> architectures to evaluate which is more effective for protein classification.</p>
+<hr>
+<h2 id="-research-objectives">🎯 Research Objectives<a hidden class="anchor" aria-hidden="true" href="#-research-objectives">#</a></h2>
+<ul>
+<li>Use only <strong>protein sequence embeddings</strong> to classify which species a given protein belongs to.</li>
+<li>Compare three deep learning methods:
+<ul>
+<li>Recurrent Neural Network (RNN)</li>
+<li>Long Short-Term Memory (LSTM)</li>
+<li>Transformer (Attention-based)</li>
+</ul>
+</li>
+<li>Evaluate each model’s classification accuracy and training stability.</li>
+<li>Identify which architecture is most suitable for order-sensitive protein sequence data.</li>
+</ul>
+<hr>
+<h2 id="-methodology">📚 Methodology<a hidden class="anchor" aria-hidden="true" href="#-methodology">#</a></h2>
+<p><strong>Dataset:</strong></p>
+<ul>
+<li>Sourced from <strong>UniProt</strong> ‘Protein Embeddings’ for three species:
+<ul>
+<li><em>Caenorhabditis elegans</em>, <em>Homo sapiens</em>, <em>Mus musculus</em>.</li>
+</ul>
+</li>
+<li>Each embedding is a 1024-dimensional vector representing the amino acid sequence.</li>
+</ul>
+<p><strong>Preprocessing:</strong></p>
+<ul>
+<li>5,000 embedding vectors randomly sampled per species.</li>
+<li>Labeled for supervised learning.</li>
+<li>Split into train:validation:test sets (60% : 20% : 20%).</li>
+<li>Implemented in <strong>Google Colab GPU environment</strong>.</li>
+</ul>
+<p><strong>Models:</strong></p>
+<ul>
+<li>All models share the same hyperparameters: hidden layers, optimizer, loss function, epochs, batch size.</li>
+<li><strong>Early stopping</strong> applied if validation loss does not decrease for 10 epochs.</li>
+</ul>
+<hr>
+<h2 id="-deep-learning-architectures">🧬 Deep Learning Architectures<a hidden class="anchor" aria-hidden="true" href="#-deep-learning-architectures">#</a></h2>
+<ul>
+<li><strong>RNN:</strong> Basic sequential model for pattern recognition in time-series data.
+<img alt="rnn" loading="lazy" src="/images/ProteinSeq/rnn.png"></li>
+<li><strong>LSTM:</strong> Solves the vanishing gradient issue of RNNs, allowing learning of longer sequences.
+<img alt="lstm" loading="lazy" src="/images/ProteinSeq/lstm.png"></li>
+<li><strong>Transformer:</strong> Uses Attention mechanisms to process input in parallel rather than sequentially, theoretically faster but may underperform on biological sequences.
+<img alt="transformer" loading="lazy" src="/images/ProteinSeq/transformer.png"></li>
+</ul>
+<hr>
+<h2 id="-key-findings">📊 Key Findings<a hidden class="anchor" aria-hidden="true" href="#-key-findings">#</a></h2>
+<ul>
+<li>
+<p><strong>Training Stability:</strong></p>
+<ul>
+<li>RNN and LSTM showed steadily decreasing loss and increasing accuracy during training.</li>
+<li>Transformer exhibited unstable learning curves for this task.</li>
+</ul>
+</li>
+<li>
+<p><strong>Test Results:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Model</th>
+          <th>Test Loss</th>
+          <th>Test Accuracy</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>RNN</td>
+          <td>0.5653</td>
+          <td>68.9%</td>
+      </tr>
+      <tr>
+          <td>LSTM</td>
+          <td>0.5513</td>
+          <td>68.7%</td>
+      </tr>
+      <tr>
+          <td>Transformer</td>
+          <td>0.5953</td>
+          <td>64.2%</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p><strong>Conclusion:</strong><br>
+RNN-based models outperformed Transformer for protein sequence classification, achieving ~69% test accuracy versus 64% for Transformer.<br>
+Loss values remained stable (around 0.55–0.59), confirming the RNN and LSTM models’ reliability for this sequential task.</p>
+</li>
+</ul>
+<hr>
+<h2 id="-insights--discussion">💡 Insights &amp; Discussion<a hidden class="anchor" aria-hidden="true" href="#-insights--discussion">#</a></h2>
+<ul>
+<li><strong>Contribution:</strong> Demonstrates that even simple RNN or LSTM architectures can effectively classify protein sequences based on amino acid embeddings.</li>
+<li><strong>Limitation:</strong> Small dataset and shallow model depth limit generalizability.</li>
+<li><strong>Future Work:</strong> Scaling up to larger protein databases and exploring hybrid models combining RNNs with Attention mechanisms could further boost accuracy.</li>
+</ul>
+<hr>
+<h2 id="-what-i-learned">📘 What I Learned<a hidden class="anchor" aria-hidden="true" href="#-what-i-learned">#</a></h2>
+<ul>
+<li>End-to-end pipeline for <strong>protein sequence classification using deep learning</strong>.</li>
+<li>Hands-on practice with <strong>sequence embedding</strong>, data preprocessing, and multi-model comparison.</li>
+<li>Designed, trained, and tuned multiple AI architectures (RNN, LSTM, Transformer) for bioinformatics.</li>
+<li>Learned the practical trade-offs of model complexity vs. interpretability for biological data.</li>
+<li>Presented findings as a final thesis project and prepared code for reproducibility.</li>
+</ul>
+<hr>
+<h2 id="-links">🔗 Links<a hidden class="anchor" aria-hidden="true" href="#-links">#</a></h2>
+<ul>
+<li><a href="https://github.com/stellajo99/ProteinSeqClassification/blob/main/Full_Thesis_Kor.pdf">📄 Full Thesis (PDF)</a></li>
+<li><a href="https://github.com/stellajo99/ProteinSeqClassification">💻 Code Repository (GitHub)</a></li>
+<li><a href="https://www.uniprot.org/">🔬 UniProt Dataset</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://stellajo99.github.io/">Stella Jo</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>A Study on Personalized Travel Route Recommendation Using LSTM | Stella Jo</title>
+<meta name="keywords" content="">
+<meta name="description" content="A research project exploring GPS trajectory clustering and LSTM sequence modeling to provide personalized travel routes with time information.">
+<meta name="author" content="">
+<link rel="canonical" href="https://stellajo99.github.io/projects/travelrecommendation/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://stellajo99.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://stellajo99.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://stellajo99.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://stellajo99.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://stellajo99.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://stellajo99.github.io/projects/travelrecommendation/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://stellajo99.github.io/projects/travelrecommendation/">
+  <meta property="og:site_name" content="Stella Jo">
+  <meta property="og:title" content="A Study on Personalized Travel Route Recommendation Using LSTM">
+  <meta property="og:description" content="A research project exploring GPS trajectory clustering and LSTM sequence modeling to provide personalized travel routes with time information.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2022-08-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-08-07T00:00:00+00:00">
+    <meta property="og:image" content="https://stellajo99.github.io/images/TravelRoute/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://stellajo99.github.io/images/TravelRoute/cover.png">
+<meta name="twitter:title" content="A Study on Personalized Travel Route Recommendation Using LSTM">
+<meta name="twitter:description" content="A research project exploring GPS trajectory clustering and LSTM sequence modeling to provide personalized travel routes with time information.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "https://stellajo99.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "A Study on Personalized Travel Route Recommendation Using LSTM",
+      "item": "https://stellajo99.github.io/projects/travelrecommendation/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A Study on Personalized Travel Route Recommendation Using LSTM",
+  "name": "A Study on Personalized Travel Route Recommendation Using LSTM",
+  "description": "A research project exploring GPS trajectory clustering and LSTM sequence modeling to provide personalized travel routes with time information.",
+  "keywords": [
+    
+  ],
+  "articleBody": "📌 Overview This research aims to design a personalized travel route recommendation system that goes beyond simple location lists by also predicting how long to stay at each place.\nUnlike prior studies that often rely on external preference data, this work uses only raw GPS trajectory data, clustering similar travel patterns and applying an LSTM Encoder-Decoder to generate time-aware travel sequences.\nThe goal is to make travel planning more efficient and user-centric.\n🎯 Research Objectives Analyze GPS trajectory data to identify individual travel patterns Convert travel paths into string sequences for similarity comparison Cluster users based on sequence similarity (edit distance) Use Relaxed LCS to assign users to the most relevant cluster Predict personalized, time-included travel sequences using LSTM Compare prediction accuracy with baseline methods 📚 Methodology Dataset:\nMicrosoft Asia GeoLife GPS Trajectories (182 users, ~15,000 routes, Beijing) Preprocessing:\nStay Point Detection using scikit-mobility Reverse Geocoding via Google Places API Transform stay points into unique character sequences representing locations and durations Clustering:\nHierarchical clustering with Cosine similarity and Levenshtein distance Relaxed Longest Common Subsequence (LCS) for user-to-cluster assignment Modeling:\nSequence-to-Sequence LSTM Encoder-Decoder architecture Sliding window data generation for training/validation/testing Performance evaluated with MA (location-only accuracy) and MRE (order-sensitive accuracy) 🗂️ Data \u0026 Analysis Workflow Highlights:\nStay Point Detection \u0026 Sequence Encoding\nSimilarity-Based Clustering \u0026 Dendrogram\nLSTM Encoder-Decoder Model Architecture\n📊 Key Findings Clustering Results:\nHierarchical clustering using Levenshtein distance showed more stable clusters (average silhouette score ≈ 0.10) compared to other clustering methods.\nModel Performance:\nAverage MA (location prediction) \u003e 0.5 across clusters Average MRE (sequence order accuracy) ≈ 0.5, which is promising given the complexity The proposed method achieved 2x higher sequence accuracy than baseline approaches (~50% vs. 19%) Training Loss: Cluster-specific loss values remained low overall (e.g., most clusters achieved final loss between ~0.14 and ~0.28), indicating good convergence and minimal overfitting when validated on unseen data 💡 Insights \u0026 Discussion Contribution:\nThis study shows that meaningful, personalized travel recommendations can be generated using only GPS trajectory data, minimizing dependency on external preference information.\nLimitations:\nThe dataset used was not collected exclusively for travel; some recommended stops may not align with typical travel behavior. The model currently does not fully learn real-world distance constraints between locations. Future Work:\nApply the method to real tourist data for higher travel relevance. Integrate spatial distance constraints into the prediction layer. Extend this foundation into a practical travel planning service. 📘 What I Learned Hands-on experience with large-scale GPS trajectory preprocessing, noise filtering, and transformation for real-world ML tasks Practical application of advanced clustering methods: string similarity metrics (Edit Distance, Relaxed LCS) and hierarchical clustering for pattern mining Designed and implemented a custom LSTM Encoder-Decoder sequence model: including sequence data generation, embedding layers, hyperparameter tuning (e.g., window size, batch size, early stopping), and evaluation with domain-specific metrics (MA, MRE) Gained insights into how to train, validate, and test sequential AI models for personalized predictions, handling long input sequences without vanishing gradients Experience presenting results at an academic conference, preparing publication-ready documentation, and managing IP registration for original research code 🔗 Links 📄 Full Paper (PDF) 📑 Final Presentation Slides 💻 Code Repository (GitHub) ",
+  "wordCount" : "521",
+  "inLanguage": "en",
+  "image":"https://stellajo99.github.io/images/TravelRoute/cover.png","datePublished": "2022-08-07T00:00:00Z",
+  "dateModified": "2022-08-07T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://stellajo99.github.io/projects/travelrecommendation/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Stella Jo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stellajo99.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://stellajo99.github.io/" accesskey="h" title="Stella Jo (Alt + H)">Stella Jo</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://stellajo99.github.io/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://stellajo99.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://stellajo99.github.io/cv/" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      A Study on Personalized Travel Route Recommendation Using LSTM
+    </h1>
+    <div class="post-meta"><span title='2022-08-07 00:00:00 +0000 UTC'>August 7, 2022</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="https://stellajo99.github.io/images/TravelRoute/cover.png" alt="Personalized Travel Route Model">
+        
+</figure>
+  <div class="post-content"><h2 id="-overview">📌 Overview<a hidden class="anchor" aria-hidden="true" href="#-overview">#</a></h2>
+<p>This research aims to design a <strong>personalized travel route recommendation system</strong> that goes beyond simple location lists by also predicting <strong>how long to stay at each place</strong>.<br>
+Unlike prior studies that often rely on external preference data, this work uses only <strong>raw GPS trajectory data</strong>, clustering similar travel patterns and applying an <strong>LSTM Encoder-Decoder</strong> to generate time-aware travel sequences.<br>
+The goal is to make travel planning more efficient and user-centric.</p>
+<hr>
+<h2 id="-research-objectives">🎯 Research Objectives<a hidden class="anchor" aria-hidden="true" href="#-research-objectives">#</a></h2>
+<ul>
+<li>Analyze GPS trajectory data to identify individual travel patterns</li>
+<li>Convert travel paths into string sequences for similarity comparison</li>
+<li>Cluster users based on sequence similarity (edit distance)</li>
+<li>Use Relaxed LCS to assign users to the most relevant cluster</li>
+<li>Predict personalized, time-included travel sequences using LSTM</li>
+<li>Compare prediction accuracy with baseline methods</li>
+</ul>
+<hr>
+<h2 id="-methodology">📚 Methodology<a hidden class="anchor" aria-hidden="true" href="#-methodology">#</a></h2>
+<p><strong>Dataset:</strong></p>
+<ul>
+<li>Microsoft Asia <em>GeoLife GPS Trajectories</em> (182 users, ~15,000 routes, Beijing)</li>
+</ul>
+<p><strong>Preprocessing:</strong></p>
+<ul>
+<li><em>Stay Point Detection</em> using scikit-mobility</li>
+<li>Reverse Geocoding via Google Places API</li>
+<li>Transform stay points into unique character sequences representing locations and durations</li>
+</ul>
+<p><strong>Clustering:</strong></p>
+<ul>
+<li>Hierarchical clustering with Cosine similarity and Levenshtein distance</li>
+<li>Relaxed Longest Common Subsequence (LCS) for user-to-cluster assignment</li>
+</ul>
+<p><strong>Modeling:</strong></p>
+<ul>
+<li><em>Sequence-to-Sequence LSTM</em> Encoder-Decoder architecture</li>
+<li>Sliding window data generation for training/validation/testing</li>
+<li>Performance evaluated with MA (location-only accuracy) and MRE (order-sensitive accuracy)</li>
+</ul>
+<hr>
+<h2 id="-data--analysis">🗂️ Data &amp; Analysis<a hidden class="anchor" aria-hidden="true" href="#-data--analysis">#</a></h2>
+<p><strong>Workflow Highlights:</strong></p>
+<ul>
+<li>
+<p>Stay Point Detection &amp; Sequence Encoding<br>
+<img alt="staypoint" loading="lazy" src="/images/TravelRoute/staypoint.png"></p>
+</li>
+<li>
+<p>Similarity-Based Clustering &amp; Dendrogram<br>
+<img alt="clustering" loading="lazy" src="/images/TravelRoute/clustering.jpg">
+<img alt="clustering on map" loading="lazy" src="/images/TravelRoute/clustering2.jpg"></p>
+</li>
+<li>
+<p>LSTM Encoder-Decoder Model Architecture<br>
+<img alt="lstm" loading="lazy" src="/images/TravelRoute/lstm.png"></p>
+</li>
+</ul>
+<hr>
+<h2 id="-key-findings">📊 Key Findings<a hidden class="anchor" aria-hidden="true" href="#-key-findings">#</a></h2>
+<ul>
+<li>
+<p><strong>Clustering Results:</strong><br>
+Hierarchical clustering using Levenshtein distance showed more stable clusters (average silhouette score ≈ 0.10) compared to other clustering methods.</p>
+</li>
+<li>
+<p><strong>Model Performance:</strong></p>
+<ul>
+<li>Average MA (location prediction) &gt; 0.5 across clusters</li>
+<li>Average MRE (sequence order accuracy) ≈ 0.5, which is promising given the complexity</li>
+<li>The proposed method achieved 2x higher sequence accuracy than baseline approaches (~50% vs. 19%)</li>
+<li>Training Loss: Cluster-specific loss values remained low overall (e.g., most clusters achieved final loss between ~0.14 and ~0.28), indicating good convergence and minimal overfitting when validated on unseen data
+<img alt="loss" loading="lazy" src="/images/TravelRoute/loss.png"></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-insights--discussion">💡 Insights &amp; Discussion<a hidden class="anchor" aria-hidden="true" href="#-insights--discussion">#</a></h2>
+<ul>
+<li>
+<p><strong>Contribution:</strong><br>
+This study shows that meaningful, personalized travel recommendations can be generated <strong>using only GPS trajectory data</strong>, minimizing dependency on external preference information.</p>
+</li>
+<li>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>The dataset used was not collected exclusively for travel; some recommended stops may not align with typical travel behavior.</li>
+<li>The model currently does not fully learn real-world distance constraints between locations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Future Work:</strong></p>
+<ul>
+<li>Apply the method to real tourist data for higher travel relevance.</li>
+<li>Integrate spatial distance constraints into the prediction layer.</li>
+<li>Extend this foundation into a practical travel planning service.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-what-i-learned">📘 What I Learned<a hidden class="anchor" aria-hidden="true" href="#-what-i-learned">#</a></h2>
+<ul>
+<li>Hands-on experience with large-scale GPS trajectory preprocessing, noise filtering, and transformation for real-world ML tasks</li>
+<li>Practical application of advanced clustering methods: string similarity metrics (Edit Distance, Relaxed LCS) and hierarchical clustering for pattern mining</li>
+<li>Designed and implemented a custom LSTM Encoder-Decoder sequence model: including sequence data generation, embedding layers, hyperparameter tuning (e.g., window size, batch size, early stopping), and evaluation with domain-specific metrics (MA, MRE)</li>
+<li>Gained insights into how to train, validate, and test sequential AI models for personalized predictions, handling long input sequences without vanishing gradients</li>
+<li>Experience presenting results at an academic conference, preparing publication-ready documentation, and managing IP registration for original research code</li>
+</ul>
+<hr>
+<h2 id="-links">🔗 Links<a hidden class="anchor" aria-hidden="true" href="#-links">#</a></h2>
+<ul>
+<li><a href="https://github.com/stellajo99/TravelRecommendation/main/%EA%B7%B8%EB%A1%9C%EC%93%B015_%EC%B5%9C%EC%A2%85%EB%85%BC%EB%AC%B8.pdf">📄 Full Paper (PDF)</a></li>
+<li><a href="https://github.com/stellajo99/TravelRecommendation/main/%EA%B7%B8%EB%A1%9C%EC%93%B015_%EC%B5%9C%EC%A2%85%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pptx">📑 Final Presentation Slides</a></li>
+<li><a href="https://github.com/stellajo99/TravelRecommendation">💻 Code Repository (GitHub)</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://stellajo99.github.io/">Stella Jo</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

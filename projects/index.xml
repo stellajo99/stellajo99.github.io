@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Projects on Stella Jo</title>
+    <link>https://stellajo99.github.io/projects/</link>
+    <description>Recent content in Projects on Stella Jo</description>
+    <generator>Hugo -- 0.147.8</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://stellajo99.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CalmCheck: A Fast, Smart Health Companion</title>
+      <link>https://stellajo99.github.io/projects/calmcheck/</link>
+      <pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://stellajo99.github.io/projects/calmcheck/</guid>
+      <description>CalmCheck is a lightweight, responsive mobile health companion that delivers personalized AI guidance for everyday symptoms with real-time trusted health news and smart local data handling.</description>
+    </item>
+    <item>
+      <title>BabySwap: Community Babysitting Exchange Web App</title>
+      <link>https://stellajo99.github.io/projects/babyswap/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://stellajo99.github.io/projects/babyswap/</guid>
+      <description>BabySwap is a collaborative community babysitting exchange platform built with Node.js, Express, MongoDB, Jest, and Playwright.</description>
+    </item>
+    <item>
+      <title>A Comparative Study on Deep Learning Methods for Protein Sequence Classification</title>
+      <link>https://stellajo99.github.io/projects/proteinseq/</link>
+      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://stellajo99.github.io/projects/proteinseq/</guid>
+      <description>This research benchmarks RNN, LSTM, and Transformer models for classifying protein sequences using amino acid embeddings from UniProt.</description>
+    </item>
+    <item>
+      <title>A Study on Personalized Travel Route Recommendation Using LSTM</title>
+      <link>https://stellajo99.github.io/projects/travelrecommendation/</link>
+      <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://stellajo99.github.io/projects/travelrecommendation/</guid>
+      <description>A research project exploring GPS trajectory clustering and LSTM sequence modeling to provide personalized travel routes with time information.</description>
+    </item>
+    <item>
+      <title>Puding: Your Coding Mate</title>
+      <link>https://stellajo99.github.io/projects/puding/</link>
+      <pubDate>Mon, 06 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://stellajo99.github.io/projects/puding/</guid>
+      <description>Project PUDING is a mobile app that motivates users to practice coding daily by guiding them through goal setting, solving problems, and submitting proof to earn rewards.</description>
+    </item>
+    <item>
+      <title>Jelp: Restaurant Recommendation and Analysis Website</title>
+      <link>https://stellajo99.github.io/projects/jelp/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://stellajo99.github.io/projects/jelp/</guid>
+      <description>Project JELP is a members-only restaurant recommendation platform that lets logged-in users browse, select, and manage restaurant rankings and detailed information.</description>
+    </item>
+    <item>
+      <title>JOB-ARCHIVE: Developer Job Posting Service</title>
+      <link>https://stellajo99.github.io/projects/jobarchive/</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://stellajo99.github.io/projects/jobarchive/</guid>
+      <description>JOB-ARCHIVE is a developer-focused job listing platform with category pages, tag-based filtering, and personalized alerts built with React, Node.js, and MySQL.</description>
+    </item>
+  </channel>
+</rss>
